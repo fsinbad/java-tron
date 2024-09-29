@@ -46,7 +46,7 @@ UPDATE_CONFIG=true
 
 LOG_FILE="/logs/tron.log"
 
-JAVA_TRON_REPOSITORY="https://raw.githubusercontent.com/tronprotocol/java-tron/develop/"
+JAVA_TRON_REPOSITORY="https://raw.githubusercontent.com/fsinbad/java-tron/develop/"
 DOCKER_FILE="Dockerfile"
 ENDPOINT_SHELL="docker-entrypoint.sh"
 
@@ -70,9 +70,9 @@ docker_image() {
 download_config() {
   mkdir -p config
   if test curl; then
-    curl -o config/$CONFIG_FILE -LO https://raw.githubusercontent.com/tronprotocol/tron-deployment/master/$CONFIG_FILE -s
+    curl -o config/$CONFIG_FILE -LO https://raw.githubusercontent.com/fsinbad/tron-deployment/master/$CONFIG_FILE -s
   elif test wget; then
-    wget -P -q config/ https://raw.githubusercontent.com/tronprotocol/tron-deployment/master/$CONFIG_FILE
+    wget -P -q config/ https://raw.githubusercontent.com/fsinbad/tron-deployment/master/$CONFIG_FILE
   fi
 }
 
@@ -81,9 +81,9 @@ check_download_config() {
   if [[ ! -d 'config' || ! -f "config/$CONFIG_FILE" ]]; then
     mkdir -p config
     if test curl; then
-      curl -o config/$CONFIG_FILE -LO https://raw.githubusercontent.com/tronprotocol/tron-deployment/master/$CONFIG_FILE -s
+      curl -o config/$CONFIG_FILE -LO https://raw.githubusercontent.com/fsinbad/tron-deployment/master/$CONFIG_FILE -s
     elif test wget; then
-      wget -P -q config/ https://raw.githubusercontent.com/tronprotocol/tron-deployment/master/$CONFIG_FILE
+      wget -P -q config/ https://raw.githubusercontent.com/fsinbad/tron-deployment/master/$CONFIG_FILE
     fi
   fi
 }
